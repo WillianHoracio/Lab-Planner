@@ -1,38 +1,34 @@
+@font-face {
+    font-family: "Shantell";
+    src: local("Shantell"),url("./fonts/ShantellSans[BNCE,INFM,SPAC,ital,wght].woff2");
+}
+
 .App {
-  text-align: center;
+    position: relative;
+    text-align: center;
+    background-image: url('./images/prism.png');
+    background-attachment: fixed;
+    width: 100vw;
+    box-sizing: border-box;
+   
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-container {
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.day-cards {
+    font-family: "Shantell";
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    gap: 18px;
+    padding: 30px;
+    width: 80%;
+    border-radius: 20px;
+    box-sizing: border-box;
 }

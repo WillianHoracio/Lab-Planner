@@ -1,0 +1,21 @@
+.title-banner {
+    font-family: "Shantell";
+    font-size: 50px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 15vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    gap: 18px;
+    padding: 30px;
+    border-radius: 20px;
+    margin: 30px 0px;
+    
+}
+
+.title-banner label {
+    text-transform: uppercase;
+    color: white;
+}

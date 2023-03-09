@@ -1,0 +1,37 @@
+.task-card {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: left;
+    border: 2px transparent solid;
+    border-radius: 8px;
+    min-height: 40px;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+.task-card:hover {
+    cursor: pointer;
+    border: 2px black solid;
+}
+
+.task-card label {
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+
+.task-card__remove {
+    position: absolute;
+    right: 10px;
+    border:1px solid black;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.task-card__remove:hover {
+    background-color: rgb(236, 116, 116);
+}

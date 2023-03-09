@@ -1,0 +1,101 @@
+.form-background {
+    font-family: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.form-background form {
+    
+    display: inline-flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: space-between;
+    width: 450px;
+    border-radius: 16px;
+    padding:20px;
+    box-sizing: border-box;
+    gap: 30px;
+}
+
+.form-title {
+    display: flex;
+    font-size: 30px;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 40px;
+    margin-bottom: 5px;
+    border-bottom: 1px dashed rgb(73, 73, 73);
+}
+
+.form-title label{
+    font-family: "Shantell";
+    max-width: 90%;
+    word-wrap: break-word;
+}
+
+.form-close-button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.form-close-button:hover {
+    cursor: pointer;
+}
+
+.task-form__button {
+    margin-top: 21px;
+    width: 100%;
+    height: 60px;
+}
+
+@media (max-height:600px) {
+
+    .form-background form {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        width: 600px;
+        height: 350px;
+        border-radius: 16px;
+        padding:20px;
+        gap: 35px;
+
+    }
+
+    .form-title {
+        display: flex;
+        font-size: 25px;
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+        max-height: 30px;
+        border-bottom: 1px dashed rgb(73, 73, 73);
+    }
+
+    .form-background .task-form-input {
+        width: 40%;
+        height: 60px;
+    }
+     
+    .form-background .task-form-textarea {
+        width: 50%;
+        height: 60px;
+    }
+
+    .task-form__button {
+        margin-top: 21px;
+        width: 150px;
+        height: 60px;
+    }
+
+}

@@ -1,0 +1,84 @@
+.card {
+    font-family: inherit;
+    transition: height 1s ease-in-out;
+    width: 300px;
+    border: none;
+    border-radius: 16px;
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.card__title{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+    border: 1px transparent solid;
+    border-bottom: 3px rgb(87, 86, 86) solid;
+    padding: 5px;
+    min-height: 50px;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    border-radius: 16px;
+    font-size: 24px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.card__title:hover {
+    cursor: pointer;
+    border: 1px rgb(85, 85, 85) solid;
+    border-bottom: 3px rgb(87, 86, 86) solid;
+    box-sizing: border-box;
+}
+
+.card__title label{
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+
+.card__edit {
+    position: absolute;
+    right: 45px;
+    border:1px solid black;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    padding: 2px;
+}
+
+.card__edit:hover {
+    background-color: rgb(168, 238, 238); 
+}
+
+.card__remove {
+    position: absolute;
+    right: 10px;
+    border:1px solid black;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    padding: 1px;
+    box-sizing: border-box;
+}
+
+.card__remove:hover {
+    background-color: rgb(236, 116, 116);
+}
+
+.card__content {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.card__minimized {
+    max-height: 0px;
+    transition: height 1s ease-in-out;
+}
+
