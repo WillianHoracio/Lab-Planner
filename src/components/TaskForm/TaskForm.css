@@ -58,28 +58,15 @@
     height: 60px;
 }
 
-@media (max-height:600px) {
+@media (max-height:600px) and (min-height:377px){
 
-    .form-background form {
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-start;
-        width: 600px;
+    .form-background form { 
+        width: 599px;
         height: 350px;
-        border-radius: 16px;
-        padding:20px;
-        gap: 35px;
-
     }
 
     .form-title {
-        display: flex;
         font-size: 25px;
-        text-align: center;
-        justify-content: center;
-        width: 100%;
-        max-height: 30px;
-        border-bottom: 1px dashed rgb(73, 73, 73);
     }
 
     .form-background .task-form-input {
@@ -99,3 +86,32 @@
     }
 
 }
+
+@media (max-height:600px) and (max-width: 540px) {
+
+    .form-background form { 
+        height: 100%;
+        align-items: normal;
+        gap: 55px 0px;
+    }
+
+    .form-title {
+        display: none;
+    }
+
+    .form-background .task-form-input {
+        width: 40%;
+        height: 60px;
+    }
+
+    .task-form__button {
+        position:absolute;
+        bottom: 5px;
+        right: 2.5%;
+        width: 95%;
+        height: 50px;
+    }
+
+}
+
+
