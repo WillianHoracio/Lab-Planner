@@ -1,4 +1,4 @@
-import {AiOutlinePlusSquare} from 'react-icons/ai'
+import {MdOutlinePlaylistAdd} from 'react-icons/md'
 import './NewTaskCard.css'
 
 
@@ -11,7 +11,7 @@ const NewTaskCard = ({cardId,toggleForm}) => {
 
   return (
       <div className="new-task-card" onClick={onToggleForm}>
-        <AiOutlinePlusSquare size={30}/>  
+        <MdOutlinePlaylistAdd size={30}/>  
       </div>
   )
     
