@@ -44,7 +44,7 @@ function App() {
           <ul>
             {menuItemList.map((item, index) => (
               <li
-                style={{backgroundColor: menuSelected[index].active ? '#e63946' :'white'}} 
+                style={{backgroundColor: menuSelected[index].active ? 'white' :'#2c4f80', color: menuSelected[index].active ? 'black' :'white'}} 
                 key={index} 
                 onClick={() => selectMenuItem(index)}>
                 

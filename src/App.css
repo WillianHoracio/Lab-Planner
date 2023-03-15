@@ -1,74 +1,118 @@
 .App {
-    position: relative;
-    text-align: center;
-    width: 100vw;
-    min-height: 100vh;
-    box-sizing: border-box;
-    display: grid;
+  position: relative;
+  text-align: center;
+  width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-areas:
+    "banner banner"
+    "menu content";
+  grid-template-columns: 15% 85%;
+  grid-template-rows: 120px auto;
+  grid-gap: 0;
+}
+
+.banner {
+      grid-area: banner;
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #1d3557;
+      z-index: 1;
+}
+
+.menu {
+  grid-area: menu;
+  position: fixed;
+  top: 120px;
+  left: 0;
+  width: 15%;
+  height: 100%;
+  border-right: 1px #1d3557 solid;
+  background-color: #F1FAEE;
+}
+
+.menu ul {
+  display: flex;
+  flex-direction: column;
+  top: 0px;
+  justify-content: left;
+  position: absolute;
+  list-style-type: none;
+  text-align: left;
+  width: 100%;
+  padding: 0;
+
+}
+
+.menu li {
+  width: 100%;
+  height: 70px;
+  margin-bottom: 5px;
+  border-bottom: 1px #1d3557 solid;
+  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.menu li:hover {
+  cursor: pointer;
+}
+
+.content {
+  grid-area: content;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.content image {
+  margin-top: 50%;
+}
+
+@media (max-width: 1070px) {
+  .App {
     grid-template-areas:
-      "banner banner"
-      "menu content";
-    grid-template-columns: 15% 85%;
-    grid-template-rows: 120px auto;
+      "banner"
+      "menu" 
+      "content";
+    grid-template-columns: 100%;
+    grid-template-rows: 100px 80px auto;
   }
-  
-  .banner {
-        grid-area: banner;
-        position: sticky;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: #1d3557;
-        z-index: 1;
-  }
-  
+
   .menu {
-    grid-area: menu;
-    position: fixed;
-    top: 120px;
-    left: 0;
-    width: 15%;
-    height: 100%;
-    border-right: 1px #1d3557 solid;
-    background-color: #F1FAEE;
-  }
-
-  .menu ul {
-    display: flex;
-    flex-direction: column;
-    top: 0px;
-    justify-content: left;
-    position: absolute;
-    list-style-type: none;
-    text-align: left;
+    position: relative;
+    top: -15px;
     width: 100%;
-    padding: 0;
-
+    height: 100%;
+    left: 0;
+    border-right: none;
+    overflow-x: scroll;
+  }
+  
+  .menu ul{
+    display: flex;
+    height: 60px;
+    flex-direction: row;
+    position: relative;
   }
 
   .menu li {
-    width: 100%;
-    height: 70px;
-    margin-bottom: 5px;
-    border-bottom: 1px #1d3557 solid;
-    border-radius: 8px;
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    min-width: 160px;
+    border-radius: 0px 0px 8px 8px;
+    border: 1px black solid;
     box-sizing: border-box;
-  }
-
-  .menu li:hover {
-    cursor: pointer;
   }
 
   .content {
-    grid-area: content;
-    background-color: white;
-    height: 100%;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
+    padding: 0px;
   }
-
-  .content image {
-    margin-top: 50%;
-  }
+}

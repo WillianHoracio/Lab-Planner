@@ -23,7 +23,7 @@ const TaskCard = ({toggleEditForm, title, description, cardId, taskId, onRemove,
 
 
     return (
-        <div style={{backgroundColor:color || "#a8dadc"}}className="task-card" onClick={editTask}>
+        <div style={{backgroundColor:color || "#FFFFFF"}}className="task-card" onClick={editTask}>
             <label>{time} <TbArrowNarrowRight/>{title}</label>
            
             <HiTrash 

@@ -59,11 +59,11 @@ const TaskForm = ({taskEditData, toggleForm, onNewTaskListed, taskId, cardId, on
 
     return (
         <section className="form-background" >
-            <form style={{backgroundColor: color || "#7da6d4" }} onSubmit={submit ? onEdit : onSubmit}>
+            <form style={{backgroundColor: color || "#FFFFFF" }} onSubmit={submit ? onEdit : onSubmit}>
                 <AiOutlineCloseCircle className="form-close-button" size={40} onClick={onClose}/>
                 
                 <div className="form-title">
-                    <label>{"Novo Item" || taskEditData.title}</label>
+                    <label>{taskEditData.title || "Novo Item" }</label>
                 </div>
                 <div className="task-form-input">
                     <FormInput 
@@ -84,11 +84,18 @@ const TaskForm = ({taskEditData, toggleForm, onNewTaskListed, taskId, cardId, on
                 </div>
                 <ColorSelector 
                     value={color}
-                    colorList={["#EB7766", "#F2D672","#FFFFFF", "#72DB72","#72BFF2","#C96DE8"]}
+                    colorList={
+                        ["#70d6ff", "#ff70a6",
+                        "#ff9770", "#ffd670",
+                        "#e9ff70","#FFFFFF"
+                        ]
+                    }
+                    width="150px"
                     onChangeColor={value => setColor(value)}
                 />
                 <div className="task-form__button">
                     <FormButton
+                        text="Salvar"
                         color="#9ff7ab"
                     />
                 </div>

@@ -25,7 +25,7 @@ const NewCard = ({idCounter, onNewCard}) => {
                             
                             
                             <FormInput  
-                                placeholder="Digite seu titulo aqui"
+                                placeholder="Titulo do cartão..."
                                 value={newCardTitle}
                                 onType={value => setNewCardTitle(value)}
                             />

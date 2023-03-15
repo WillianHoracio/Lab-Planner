@@ -2,7 +2,7 @@ import './ColorSelector.css'
 import { GithubPicker } from 'react-color'
 import { useState } from 'react'
 
-const ColorSelector = ({onChangeColor, colorList}) => {
+const ColorSelector = ({onChangeColor, colorList, width}) => {
 
     const [chosenColorList, setChosenColorList] = useState(colorList)
 
@@ -14,7 +14,7 @@ const ColorSelector = ({onChangeColor, colorList}) => {
         <div className="color-selector">
             <label>Cor</label>
             <GithubPicker 
-                width={150}
+                width={width}
                 colors={chosenColorList}
                 triangle="hide"
                 onChangeComplete={onColorPick}

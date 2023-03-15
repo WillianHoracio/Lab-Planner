@@ -21,6 +21,9 @@ const CardForm = ({toggleCardForm,cardEditData,onEditCard}) => {
     return (
         <section className="card-form-background">
             <form onSubmit={onSubmitEditCard} style={{backgroundColor: cardChosenColor}}>
+                <div className="card-form-background__title">
+                    <label>{cardEditData.cardTitle}</label>
+                </div>
                 <FormInput
                     label="Titulo"
                     placeholder="Titulo do card"
@@ -30,13 +33,15 @@ const CardForm = ({toggleCardForm,cardEditData,onEditCard}) => {
                 <ColorSelector 
                     value={cardChosenColor}
                     colorList={[
-                        "#005F73","#0A9396",
-                        "#94D2BD","#E9D8A6","#EE9B00",
-                        "#CA6702","#BB3E03","#AE2012","#9B2226"
+                        "#ef476f","#ffd166",
+                        "#06d6a0","#118ab2","#457b9d","#9B2226"
                     ]}
+                    width="100"
                     onChangeColor={value => setCardChosenColor(value)}
                 />
-                <FormButton />
+                <div className='task-card-form__button'>
+                    <FormButton text="Salvar alterações" />
+                </div>
             </form>
         </section>
     )
