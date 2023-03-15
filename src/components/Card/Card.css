@@ -1,11 +1,10 @@
 .card {
     font-family: inherit;
     transition: height 1s ease-in-out;
-    width: 300px;
+    width: 340px;
     border: none;
-    border-radius: 16px;
-    background-color: rgb(255, 255, 255);
-    padding: 5px;
+    border-radius: 8px;
+    padding: 15px 10px;
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -18,11 +17,11 @@
     align-items: center;
     border: 1px transparent solid;
     border-bottom: 3px rgb(87, 86, 86) solid;
+    border-radius: 8px;
     padding: 5px;
     min-height: 50px;
     box-sizing: border-box;
     background-color: rgb(255, 255, 255);
-    border-radius: 16px;
     font-size: 24px;
     box-sizing: border-box;
     margin-bottom: 10px;

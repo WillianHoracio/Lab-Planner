@@ -1,11 +1,23 @@
+import { useEffect, useState } from 'react'
 import {AiOutlinePlus} from 'react-icons/ai'
 import './FormButton.css'
 
-const FormButton = ({color}) => {
+const FormButton = ({color, text}) => {
+
+    const [textContent, setTextContent] = useState(false);
+
+    useEffect(() => {
+        if (text) {
+            setTextContent(true)
+        } else {
+            setTextContent(false)
+        }
+    },[text])
 
     return (
         <button className='form-button' style={{background: color}}>
-            <AiOutlinePlus size={30}/>
+            
+            {!textContent ? (<AiOutlinePlus size={30}/>) : (<label>{text}</label>)}
         </button>
     )
 }

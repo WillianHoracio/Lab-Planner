@@ -1,0 +1,17 @@
+.main-container-cards {
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.task-cards {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    background-color:hsl(194, 38%, 74%);
+    gap: 18px;
+    padding: 30px;
+    max-width: 80%;
+    border-radius: 20px;
+    box-sizing: border-box;
+}

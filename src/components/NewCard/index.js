@@ -12,24 +12,27 @@ const NewCard = ({idCounter, onNewCard}) => {
         onNewCard({
             cardId: idCounter,
             cardTitle: newCardTitle,
-            cardColor: "#FFFFFF"
+            cardColor: "#457b9d"
         })
+        setNewCardTitle('')
     }
 
     return (
         <div className="new-card">   
                 <form className="new-card__form" onSubmit={onSubmit}>
-                 
+                        <label className="new-card__input___title">Criar novo cartão</label>
                         <div className="new-card__input">
+                            
+                            
                             <FormInput  
-                                placeholder="Titulo - Novo Card"
+                                placeholder="Digite seu titulo aqui"
                                 value={newCardTitle}
                                 onType={value => setNewCardTitle(value)}
                             />
                         </div>
 
                         <div className="new-card__submit">
-                            <FormButton/>
+                            <FormButton text="OK"/>
                         </div> 
                 </form>
         </div>

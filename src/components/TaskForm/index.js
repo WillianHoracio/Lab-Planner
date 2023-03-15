@@ -4,7 +4,6 @@ import ColorSelector from '../ColorSelector'
 import FormButton from '../FormButton'
 import FormInput from '../FormInput'
 import FormTextArea from '../FormTextArea'
-import TimeSelector from '../TimeSelector'
 import './TaskForm.css'
 
 const TaskForm = ({taskEditData, toggleForm, onNewTaskListed, taskId, cardId, onEditTask}) => {
@@ -14,7 +13,6 @@ const TaskForm = ({taskEditData, toggleForm, onNewTaskListed, taskId, cardId, on
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [submit, setSubmit] = useState()
-    const [time, setTime] = useState('')
     const [color, setColor] = useState('')
 
 
@@ -25,7 +23,6 @@ const TaskForm = ({taskEditData, toggleForm, onNewTaskListed, taskId, cardId, on
         if (Object.keys(taskEditData).length > 0) { //Verifica se quando o form foi aberto, ele recebeu informações preenchidas (edição), ou informação vazia (nova task)
             setTitle(taskEditData.title)
             setDescription(taskEditData.description)
-            setTime(taskEditData.time)
             setColor(taskEditData.color)
             setSubmit(true)
         } else { //Altera a função do onSubmit do form, para onEdit(true) ou onSubmit(false)
@@ -40,7 +37,6 @@ const TaskForm = ({taskEditData, toggleForm, onNewTaskListed, taskId, cardId, on
             description,
             taskId,
             cardId,
-            time,
             color
         })
         toggleForm()
@@ -53,7 +49,6 @@ const TaskForm = ({taskEditData, toggleForm, onNewTaskListed, taskId, cardId, on
             description,
             taskId: taskEditData.taskId,
             cardId: taskEditData.cardId,
-            time,
             color
         })
     }
@@ -91,10 +86,6 @@ const TaskForm = ({taskEditData, toggleForm, onNewTaskListed, taskId, cardId, on
                     value={color}
                     colorList={["#EB7766", "#F2D672","#FFFFFF", "#72DB72","#72BFF2","#C96DE8"]}
                     onChangeColor={value => setColor(value)}
-                />
-                <TimeSelector 
-                    value={time}
-                    onType={value => setTime(value)}
                 />
                 <div className="task-form__button">
                     <FormButton

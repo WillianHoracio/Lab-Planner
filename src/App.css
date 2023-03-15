@@ -1,34 +1,74 @@
-@font-face {
-    font-family: "Shantell";
-    src: local("Shantell"),url("./fonts/ShantellSans[BNCE,INFM,SPAC,ital,wght].woff2");
-}
-
 .App {
     position: relative;
     text-align: center;
-    background-image: url('./images/prism.png');
-    background-attachment: fixed;
     width: 100vw;
-    box-sizing: border-box;
-   
-}
-
-.main-container {
     min-height: 100vh;
-    width: 100%;
     box-sizing: border-box;
-}
+    display: grid;
+    grid-template-areas:
+      "banner banner"
+      "menu content";
+    grid-template-columns: 15% 85%;
+    grid-template-rows: 120px auto;
+  }
+  
+  .banner {
+        grid-area: banner;
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #1d3557;
+        z-index: 1;
+  }
+  
+  .menu {
+    grid-area: menu;
+    position: fixed;
+    top: 120px;
+    left: 0;
+    width: 15%;
+    height: 100%;
+    border-right: 1px #1d3557 solid;
+    background-color: #F1FAEE;
+  }
 
-.day-cards {
-    font-family: "Shantell";
-    display: inline-flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    gap: 18px;
-    padding: 30px;
-    width: 80%;
-    border-radius: 20px;
+  .menu ul {
+    display: flex;
+    flex-direction: column;
+    top: 0px;
+    justify-content: left;
+    position: absolute;
+    list-style-type: none;
+    text-align: left;
+    width: 100%;
+    padding: 0;
+
+  }
+
+  .menu li {
+    width: 100%;
+    height: 70px;
+    margin-bottom: 5px;
+    border-bottom: 1px #1d3557 solid;
+    border-radius: 8px;
+    padding: 10px;
     box-sizing: border-box;
-}
+  }
+
+  .menu li:hover {
+    cursor: pointer;
+  }
+
+  .content {
+    grid-area: content;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .content image {
+    margin-top: 50%;
+  }

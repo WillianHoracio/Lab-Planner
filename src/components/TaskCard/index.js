@@ -1,6 +1,6 @@
 import './TaskCard.css'
 import {HiTrash} from 'react-icons/hi'
-import {BsArrowBarRight} from 'react-icons/bs'
+import {TbArrowNarrowRight} from 'react-icons/tb'
 
 const TaskCard = ({toggleEditForm, title, description, cardId, taskId, onRemove, time, color}) => {
     
@@ -23,8 +23,8 @@ const TaskCard = ({toggleEditForm, title, description, cardId, taskId, onRemove,
 
 
     return (
-        <div style={{backgroundColor:color || "white"}}className="task-card" onClick={editTask}>
-            <label>{time} <BsArrowBarRight/>{title}</label>
+        <div style={{backgroundColor:color || "#a8dadc"}}className="task-card" onClick={editTask}>
+            <label>{time} <TbArrowNarrowRight/>{title}</label>
            
             <HiTrash 
                 className='task-card__remove' 
