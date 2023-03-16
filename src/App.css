@@ -92,6 +92,7 @@
     left: 0;
     border-right: none;
     overflow-x: scroll;
+    overflow-y: hidden;
   }
   
   .menu ul{
