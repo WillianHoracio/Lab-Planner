@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import './App.css';
 import Banner from './components/Banner';
+import News from './components/News';
 import Planner from './components/Planner';
 
 function App() {
   const [menuSelected, setMenuSelected] = useState([
-    { name: "Mural", active: true },
+    { name: "Novidades", active: true },
+    { name: "Mural", active: false },
     { name: "Calendário", active: false },
     { name: "Resultados", active: false },
     { name: "Testes", active: false }
@@ -14,6 +16,7 @@ function App() {
   const [pageTitle, setPageTitle] = useState('Mural')
   
   const menuItemList = [
+    "Novidades",
     "Mural",
     "Calendário",
     "Resultados",
@@ -57,7 +60,8 @@ function App() {
       </section>
       <main className='content'>
         {menuSelected.map(item => 
-            item.name === 'Mural' && item.active && <Planner key="item.name" />
+            item.name === 'Novidades' && item.active && <News/>
+            ||item.name === 'Mural' && item.active && <Planner key="item.name" />
             || item.name === 'Calendário' && item.active && <img key="item.name" src={imageUnderConstructionLink}/>
             || item.name === 'Resultados' && item.active && <img key="item.name" src={imageUnderConstructionLink}/>
             || item.name === 'Testes' && item.active && <img key="item.name" src={imageUnderConstructionLink}/>
