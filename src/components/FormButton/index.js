@@ -15,10 +15,10 @@ const FormButton = ({color, text}) => {
     },[text])
 
     return (
-        <button className='form-button' style={{background: color}}>
-            
-            {!textContent ? (<AiOutlinePlus size={30}/>) : (<label>{text}</label>)}
+        <button id="form-button" className='form-button' style={{background: color}}>
+            {!textContent ? (<AiOutlinePlus size={30}/>) : (<label htmlFor="form-button">{text}</label>)}
         </button>
+
     )
 }
 
