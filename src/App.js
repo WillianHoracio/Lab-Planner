@@ -5,16 +5,16 @@ import Planner from './components/Planner';
 
 function App() {
   const [menuSelected, setMenuSelected] = useState([
-    { name: "Organização", active: true },
+    { name: "Mural", active: true },
     { name: "Calendário", active: false },
     { name: "Resultados", active: false },
     { name: "Testes", active: false }
   ])
 
-  const [pageTitle, setPageTitle] = useState('Organização')
+  const [pageTitle, setPageTitle] = useState('Mural')
   
   const menuItemList = [
-    "Organização",
+    "Mural",
     "Calendário",
     "Resultados",
     "Testes"
@@ -57,7 +57,7 @@ function App() {
       </section>
       <main className='content'>
         {menuSelected.map(item => 
-            item.name === 'Organização' && item.active && <Planner key="item.name" />
+            item.name === 'Mural' && item.active && <Planner key="item.name" />
             || item.name === 'Calendário' && item.active && <img key="item.name" src={imageUnderConstructionLink}/>
             || item.name === 'Resultados' && item.active && <img key="item.name" src={imageUnderConstructionLink}/>
             || item.name === 'Testes' && item.active && <img key="item.name" src={imageUnderConstructionLink}/>
