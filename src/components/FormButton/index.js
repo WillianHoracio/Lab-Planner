@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { AiOutlinePlus } from 'react-icons/ai'
 import './FormButton.css'
 
-const FormButton = ({ color, text, active}) => {
+const FormButton = ({ color, text}) => {
   const [textContent, setTextContent] = useState(false)
 
   useEffect(() => {
@@ -10,7 +10,7 @@ const FormButton = ({ color, text, active}) => {
   }, [text])
 
   return (
-    <button disabled={active? true: false} id="form-button" className='form-button' style={{ background: color }}>
+    <button  id="form-button" className='form-button' style={{ background: color }}>
       {!textContent ? (
         <AiOutlinePlus size={30} />
       ) : (
