@@ -10,7 +10,7 @@ const FormButton = ({ color, text, active}) => {
   }, [text])
 
   return (
-    <button disabled={!active} id="form-button" className='form-button' style={{ background: color }}>
+    <button disabled={active? true: false} id="form-button" className='form-button' style={{ background: color }}>
       {!textContent ? (
         <AiOutlinePlus size={30} />
       ) : (
