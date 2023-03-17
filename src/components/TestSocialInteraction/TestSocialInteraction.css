@@ -1,0 +1,126 @@
+.test-social-interaction-background {
+    font-family: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    overflow-y: auto;
+}
+
+.test-social-interaction__close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: white;
+    border-radius: 20px;
+    height: 40px;
+}
+
+.test-social-interaction__close:hover {
+    cursor: pointer;
+}
+
+.test-social-interaction__time {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "leftTime centerTime rightTime";
+    position: absolute;
+    top:5px;
+    width: 90vw;
+    height: 20vh;
+    background-color: azure;
+    border: 1px black solid;
+}
+
+.test-social-interaction-time__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: leftTime;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.test-social-interaction-time__center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: centerTime;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+.test-social-interaction-time__right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: rightTime;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+
+
+.test-social-interaction {
+    display: flex;
+    align-items: flex-end;
+    width: 100vw;
+    height: 90vh;
+}
+
+.test-social-interaction__board {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "left center right";
+    margin: auto;
+    width: 90%;
+    height: 70%;
+    margin-top: 10%;
+    background-color: whitesmoke;
+}
+
+.test-social-interaction__board___left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: left;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid black;
+}
+
+.test-social-interaction__board___center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: center;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid black;
+
+}
+
+.test-social-interaction__board___right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: right;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid black;
+}

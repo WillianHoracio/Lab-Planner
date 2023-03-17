@@ -14,13 +14,13 @@
 }
 
 .banner {
-      grid-area: banner;
-      position: sticky;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #1d3557;
-      z-index: 1;
+  grid-area: banner;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1d3557;
+  z-index: 1;
 }
 
 .menu {

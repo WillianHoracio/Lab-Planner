@@ -3,6 +3,8 @@ import './App.css';
 import Banner from './components/Banner';
 import News from './components/News';
 import Planner from './components/Planner';
+import Tests from './components/Tests';
+import underConstruction from './images/under-construction.jpg'
 
 function App() {
   const [menuSelected, setMenuSelected] = useState([
@@ -13,7 +15,7 @@ function App() {
     { name: "Testes", active: false }
   ])
 
-  const [pageTitle, setPageTitle] = useState('Mural')
+  const [pageTitle, setPageTitle] = useState('Novidades')
   
   const menuItemList = [
     "Novidades",
@@ -35,8 +37,6 @@ function App() {
     setMenuSelected(updatedMenuSelected);
   };
 
-  const imageUnderConstructionLink = "https://img1.gratispng.com/20180925/ahe/kisspng-clip-art-illustration-image-vector-graphics-wanted-holland-circular-hotspot-5baa1f9b311121.005054461537875867201.jpg"
-  
   return (
     <div className='App'>
       <header className='banner'>
@@ -60,11 +60,11 @@ function App() {
       </section>
       <main className='content'>
         {menuSelected.map(item => 
-            item.name === 'Novidades' && item.active && <News/>
-            ||item.name === 'Mural' && item.active && <Planner key="item.name" />
-            || item.name === 'Calendário' && item.active && <img key="item.name" src={imageUnderConstructionLink}/>
-            || item.name === 'Resultados' && item.active && <img key="item.name" src={imageUnderConstructionLink}/>
-            || item.name === 'Testes' && item.active && <img key="item.name" src={imageUnderConstructionLink}/>
+            item.name === 'Novidades' && item.active && <News key={item.name}/>
+            ||item.name === 'Mural' && item.active && <Planner key={item.name} />
+            || item.name === 'Calendário' && item.active && <img key={item.name} src={underConstruction}/>
+            || item.name === 'Resultados' && item.active && <img key={item.name} src={underConstruction}/>
+            || item.name === 'Testes' && item.active && <Tests key={item.name}/>
         )}
       </main>
     </div>

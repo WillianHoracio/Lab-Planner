@@ -14,7 +14,8 @@ const News = () => {
                     <label>Proximas etapas:</label>
                 </div>
                 <div className="news__card__new">
-                    <label>-Adicionar o teste de interação social na aba testes. </label>
+                    <label>-Adicionar o teste de interação social (teste das três câmaras) na aba testes. </label>
+                    <label>-Aprimoramento da interface e design. </label>
                     <label>-Integrar backend Node.js para manipular e armazenar as informações em um banco de dados.</label>
                 </div>
             </div>
