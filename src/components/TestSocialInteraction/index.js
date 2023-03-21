@@ -2,59 +2,15 @@ import './TestSocialInteraction.css'
 import {ImCancelCircle} from 'react-icons/im'
 import rat from '../../images/rat.png'
 import { useEffect, useState } from 'react'
+import Timer from '../Timer'
+import TotalTimer from '../TimerTotal'
 
 const TestSocialInteraction = ({closeTest}) => {
-    
-    //-----------------------Controles de tempo---------------------------//
-    const [startTime, setStartTime] = useState(Date.now())
-    const [currentTime, setCurrentTime] = useState(startTime)
-
-    const [currentLeftTimer, setCurrentLeftTimer] = useState(0)
-    const [lastLeftTimer, setLastLeftTimer] = useState(Date.now())
-    const [leftTimer, setLeftTimer] = useState (0)
-    const [leftTimerPause, setLeftTimerPause] = useState(true)
-
-    const [currentCenterTimer, setCurrentCenterTimer] = useState(0)
-    const [lastCenterTimer, setLastCenterTimer] = useState(Date.now())
-    const [centerTimer, setCenterTimer] = useState (0)
-    const [centerTimerPause, setCenterTimerPause] = useState(false)
-
-    const [currentRightTimer, setCurrentRightTimer] = useState(0)
-    const [lastRightTimer, setLastRightTimer] = useState(Date.now())
-    const [rightTimer, setRightTimer] = useState (0)
-    const [rightTimerPause, setRightTimerPause] = useState(true)
-
-    useEffect(() => {
-        const intervalTime = setInterval(() => {
-            setCurrentTime(Date.now());
-            if (!leftTimerPause) {
-                setLeftTimer(Date.now());
-            }
-            if (!centerTimerPause) {
-                setCenterTimer(Date.now());
-            }
-            if (!rightTimerPause) {
-                setRightTimer(Date.now());
-            }
-
-        }, 5);
-        return () => clearInterval(intervalTime);
-    }, [startTime, leftTimerPause, centerTimerPause, rightTimerPause]);
-
-
-    const time = currentTime - startTime;
-
-    const formatTime = (time) => {
-        const min = Math.floor(time / 60000);
-        const seg = Math.floor((time % 60000) / 1000);
-        const ms = time % 1000;
-
-        return `${min.toString().padStart(2, '0')}:${seg.toString().padStart(2, '0')}:${ms.toString().padStart(3, '0')}`;
-    }
-
-    //------------------------------------------------------------//
-
-    const [ratPosition, setRatPosition] = useState('center')
+ 
+    const [ratPosition, setRatPosition] = useState('none')
+    const [firstMove, setFirstMove] = useState(true)
+    const [leftRat, setLeftRat] = useState(true)
+    const [rightRat, setrightRat] = useState(false)
 
     const ratPositionList = [
         { id: "left", className: "test-social-interaction__board___left" },
@@ -66,61 +22,20 @@ const TestSocialInteraction = ({closeTest}) => {
         closeTest()
     }
 
-    const unpauseTimer = (position) => {
 
-        if (position === 'left') {
-           
-            setLeftTimer(Date.now() + currentLeftTimer)
-            setLeftTimerPause(false)
-            
-            
-        } else 
-        if (position === 'center'){
-            
-           
-            setCenterTimer(Date.now() + currentCenterTimer)
-            setCenterTimerPause(false)
-        } else {
-            
-           
-            setRightTimer(Date.now() + currentRightTimer)
-            setRightTimerPause(false)
-        }
 
-    }
-
-    const pauseTimer = (lastPosition) => {
-
-        if (lastPosition === 'left') {
-            let leftTimeSum = currentLeftTimer + (Date.now() - lastLeftTimer)
-            setCurrentLeftTimer(leftTimeSum)
-            setLastLeftTimer(Date.now())
-            setLeftTimerPause(true)
-        } else 
-        if (lastPosition === 'center'){
-            let centerTimeSum = currentCenterTimer + (Date.now() - lastCenterTimer)
-            setCurrentCenterTimer(centerTimeSum)
-            setLastCenterTimer(Date.now())
-            setCenterTimerPause(true)
-        } else {
-            let rightTimeSum = currentRightTimer + (Date.now() - lastRightTimer)
-            setCurrentRightTimer(rightTimeSum)
-            setLastRightTimer(Date.now())
-            setRightTimerPause(true)
-        }
-
-    }
+   
 
     const changeRatPosition = (event) => {
         const newPosition = event.target.id
         let lastPosition = ratPosition
+        setFirstMove(false)
         if ((newPosition === 'left' &&  lastPosition === 'right') || (newPosition === 'right' &&  lastPosition === 'left')) {
             return
-        } else {
-            setRatPosition(newPosition);
-            pauseTimer(lastPosition)
-            unpauseTimer(event.target.className.split('___')[1])
-        }
+        } else 
+            if ((newPosition === 'left') || (newPosition === 'center') || (newPosition === 'right')) {
+                setRatPosition(newPosition);
+            }
  
     };
 
@@ -130,25 +45,48 @@ const TestSocialInteraction = ({closeTest}) => {
     }
 
 
-    console.log('left:',leftTimerPause,'--center:',centerTimerPause,'--right:',rightTimerPause)
+    
     return (
         <div className="test-social-interaction-background">
             <div className="test-social-interaction__close" onClick={close}>
                 <ImCancelCircle size={40} />
             </div>
             <div className="test-social-interaction__time">  
+                <div className="test-social-interaction-time__leftInteraction">
+                    <label>
+                        <Timer paused={ratPosition === ''? false : true} firstMove={firstMove}/>
+                    </label>
+                </div>
+
+                <div className="test-social-interaction-time__totalTime">
+                    <label>
+                        <TotalTimer firstMove={firstMove} paused={true}/>
+                    </label>
+                </div>
+                
+                <div className="test-social-interaction-time__rightInteraction">
+                    <label>
+                        <Timer paused={ratPosition === ''? false : true} firstMove={firstMove}/>
+                    </label>
+                </div>
 
                 <div className="test-social-interaction-time__left">
                     <label>
-                        {formatTime(leftTimer - lastLeftTimer)}
+                        <Timer paused={ratPosition === 'left'? false : true} firstMove={firstMove}/>
                     </label>
                 </div>
                 <div className="test-social-interaction-time__center">
-                    <label>{formatTime(centerTimer - lastCenterTimer)}</label>
+                    <label>
+
+                        <Timer paused={ratPosition === 'center'? false : true} firstMove={firstMove} />
+
+                    </label>
                 </div>
 
                 <div className="test-social-interaction-time__right">
-                    <label>{formatTime(rightTimer - lastRightTimer)}</label>
+                    <label>
+                        <Timer paused={ratPosition === 'right'? false : true} firstMove={firstMove}/>
+                    </label>
                 </div>
  
             </div>
@@ -159,6 +97,8 @@ const TestSocialInteraction = ({closeTest}) => {
                         return (
                             <div key={"div" + position.id} id={position.id} className={classNamePosition} onClick={changeRatPosition}>
                                 {ratPosition === position.id && <img key={position.id} src={rat} onClick={handleImageClick} />}
+                                {leftRat  && position.id === 'left' ? <img src={rat} className="test-social-interaction__board___leftRat"/> : ''}
+                                {rightRat  && position.id === 'right' ? <img src={rat} className="test-social-interaction__board___rightRat"/> : ''}
                             </div>
                         );
                     })}

@@ -29,7 +29,10 @@
 .test-social-interaction__time {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "leftTime centerTime rightTime";
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "leftInterationTime totalTime rightInterationTime"
+        "leftTime centerTime rightTime";
     position: absolute;
     top:5px;
     width: 90vw;
@@ -92,6 +95,7 @@
 }
 
 .test-social-interaction__board___left{
+    position:relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,6 +107,7 @@
 }
 
 .test-social-interaction__board___center{
+    position:relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -115,6 +120,7 @@
 }
 
 .test-social-interaction__board___right{
+    position:relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,4 +129,26 @@
     width: 100%;
     box-sizing: border-box;
     border: 2px solid black;
+}
+
+.test-social-interaction__board___leftRat {
+    position: absolute;
+    top: 3px;
+    left:3px;
+    height: 70px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgb(58, 135, 250);
+
+}
+
+.test-social-interaction__board___rightRat {
+    position: absolute;
+    top: 3px;
+    right:3px;
+    height: 70px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgb(58, 135, 250);
+
 }

@@ -19,7 +19,7 @@ const TestCard = ({title, openTest}) => {
                 <img src={underConstruction}/>
             </div>
             <div className="test-card__button">
-                
+                <FormButton text="Iniciar"/>
             </div>
         </form>
     )
