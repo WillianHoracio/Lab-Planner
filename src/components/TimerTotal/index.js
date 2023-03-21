@@ -27,7 +27,7 @@ const TimerTotal = ({paused, firstMove}) => {
             const now = Date.now()
             setElapsedTime(now - startTime)
         }
-        }, 10)
+        }, 100)
 
         return () => clearInterval(intervalRef.current)
     }, [isPaused, startTime])
