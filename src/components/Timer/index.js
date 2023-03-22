@@ -1,52 +1,34 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 
-const Timer = ({paused, firstMove, total}) => {
-
-    const [isPaused, setIsPaused] = useState(paused)
-    const [startTime, setStartTime] = useState(0)
-    const [elapsedTime, setElapsedTime] = useState(0)
-    const intervalRef = useRef(null)
+const Timer = ({ paused }) => {
+    const [totalTime, setTotalTime] = useState(0)
+    const [previousTime, setPreviousTime] = useState(null)
 
     useEffect(() => {
-        setIsPaused(paused)
-        handlePauseClick()
-    },[paused])
-
-    
-
-    const handlePauseClick = () => {
-        
-        if (!firstMove) {
-            setIsPaused(!isPaused)  
+        if (paused) {
+        if (previousTime !== null) {
+            setTotalTime(totalTime + (Date.now() - previousTime))
         }
-        isPaused && setStartTime(Date.now() - elapsedTime)
-        
-        
-    }
-
-    useEffect(() => {
-        intervalRef.current = setInterval(() => {
-        if (!isPaused) {
-            const now = Date.now()
-            setElapsedTime(now - startTime)
+        } else {
+        setPreviousTime(Date.now())
         }
-        }, 10)
+    }, [paused])
 
-        return () => clearInterval(intervalRef.current)
-    }, [isPaused, startTime])
-
-    
-
-    const formatTime = (time) => {
-        const minutes = Math.floor(time / 60000).toString().padStart(2, '0')
-        const seconds = Math.floor((time % 60000) / 1000).toString().padStart(2, '0')
-        const milliseconds = (time % 1000).toString().padStart(3, '0')
-        return `${minutes}:${seconds}:${milliseconds}`
+    function formatTime(milliseconds) {
+        const totalSeconds = Math.floor(milliseconds / 1000);
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+        const remainingMilliseconds = milliseconds % 1000;
+        const formattedMinutes = String(minutes).padStart(2, '0');
+        const formattedSeconds = String(seconds).padStart(2, '0');
+        const formattedMilliseconds = String(remainingMilliseconds).padStart(3, '0');
+        return `${formattedMinutes}:${formattedSeconds}:${formattedMilliseconds}`;
     }
-
+      
+    
     return (
         <div>
-        <label>{formatTime(elapsedTime)}</label>
+        <label>{formatTime(totalTime)}</label>
         </div>
     )
 }

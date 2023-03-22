@@ -33,10 +33,10 @@
     grid-template-areas: 
         "leftInterationTime totalTime rightInterationTime"
         "leftTime centerTime rightTime";
-    position: absolute;
-    top:5px;
+    position: fixed;
+    top:15px;
     width: 90vw;
-    height: 20vh;
+    height: 80px;
     background-color: azure;
     border: 1px black solid;
 }
@@ -77,9 +77,12 @@
 
 .test-social-interaction {
     display: flex;
+    position: fixed;
+    top: 70px;
     align-items: flex-end;
     width: 100vw;
     height: 90vh;
+    max-height: 450px;
 }
 
 .test-social-interaction__board {
@@ -90,7 +93,7 @@
     margin: auto;
     width: 90%;
     height: 70%;
-    margin-top: 10%;
+    margin-top: 60px;
     background-color: whitesmoke;
 }
 
